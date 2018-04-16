@@ -1,0 +1,13 @@
+<!-----------------------------Modal (invite game)------------------------------------>
+<div *ngIf="modelService.getInviteGameDataModal() != null" class="modal fade" id ="inviteGameModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">   
+		  <div class="modal-body text-center">
+		    <p class="lead">{{modelService.getInviteGameDataModal().userTo}} is available for game !</p>
+		    <button class="btn btn-sm btn-primary" 
+		    (click)="sendInvite(modelService.getInviteGameDataModal())">Create game</button>
+		    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button>
+		  </div>
+		</div>
+	</div>
+</div>

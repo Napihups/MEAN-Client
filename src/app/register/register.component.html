@@ -1,0 +1,30 @@
+<div class="container">
+<!-- 	<flash-messages></flash-messages> -->
+	<form id="registryForm" *ngIf="show">
+		<fieldset>
+		    <legend>Registration</legend>
+		    <hr class="style1">
+		    <div class="form-group">
+		      <input #nameInput [(ngModel)]="name" name ="name" type="text" class="form-control" id="fullnameInput" aria-describedby="FullnameHelp" placeholder="Enter Full Name">
+		      <small id="FullnameHelp" class="form-text text-muted">Enter your full name as in NRIC</small>
+		    </div>
+		    <div class="form-group">
+		    	<input [(ngModel)]="email" name ="email" type="email" class="form-control" id ="emailInput" aria-describedby="emailHelp" placeholder="Enter Email Address">
+		    	<small id="emailHelp" class="form-text text-muted">We will never share your email to any 3rd parties</small>
+		    </div>
+		    <div class="form-group">
+		    	<input [(ngModel)]="username" name ="username" type="text" class="form-control" id ="usernameInput" aria-describedby="usernameHelp" placeholder="Enter new User Name">
+		    	<small id="usernameHelp" class="form-text text-muted">Use this to login</small>
+		    </div> 
+		    <div class="form-group">
+		    	<input [(ngModel)]="password" name ="password" type="password" class="form-control" id ="passwordInput" aria-describedby="passwordHelp" placeholder="Enter Your new Password">
+		    </div>
+
+		    <div class="form-group">
+		    	<button (click)="doRegister()" type="submit" class="btn c-btn-md btn-primary">Register</button>
+		    	<button (click)="clearForm()" class="btn c-btn-md btn-dark">Clear</button>
+		    </div>		    
+    
+    	</fieldset>
+	</form>
+</div>

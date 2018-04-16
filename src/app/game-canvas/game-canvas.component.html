@@ -1,0 +1,40 @@
+<!-- template when user are not in game --> 
+<div *ngIf="!isUserInGame">
+	<div class="card-body card-custom text-center">
+		<h3>No active game yet !</h3>
+		<div class="form-group">
+			<input [(ngModel)] = "searchInputVal" name="searchInputVal" type="text" class="form-control" id="searchInputVal" 
+			placeholder="search opponent ..." (keyup)="doSearch()">
+		</div>
+		<h4> or </h4>
+		<button type="submit" class="btn c-btn-md btn-outline-primary">Host Game</button>
+	</div>
+
+	<div class="card-body card-custom" style="height: 400px; overflow-y: auto">
+		<p *ngIf="isThereAnyResult()" class="lead text-muted">All available opponent !</p>
+		<ul class="list-group">
+			<div *ngFor="let result of searchResult">
+			  <li class=" search-link list-group-item d-flex justify-content-between align-items-center">
+			    {{result.username}}
+			    <span class="custom-btn" (click)="test(result.sId)"> Invite <i class="fas fa-arrow-right"></i> </span>
+			  </li>
+			</div>
+		</ul>
+	</div>
+</div>
+
+
+<!-- template when user is already in the game ...(rmb that it doesn't mean game is started)-->
+<div *ngIf="isUserInGame">
+	<div class="card card-body">
+		<div class="row">
+			<div class="col-md-6">
+				<span class="mr-2">You </span> <strong>Score : 24</strong>
+			</div>
+			<div class="col-md-6">
+				<span class="mr-2">Afifah </span> <strong>Score : 24</strong>
+			</div>
+		</div>
+		
+	</div>
+</div>

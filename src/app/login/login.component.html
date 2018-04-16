@@ -1,0 +1,16 @@
+<div class="card card-body login-card">
+	<div class="form-group">
+		<div *ngIf='alertLoginError' 
+		class="alert alert-danger alert-dismissible fade show" role="alert">
+		 {{errorMsg}} !!!
+
+		</div>
+		<legend>Login</legend>
+		  <fieldset>
+			   <input #usernameInput [(ngModel)]="username" (keyup.enter)="doLogin()" type="text" id ="usernameInput" name="username" placeholder="Enter Username" class="form-control" focused>
+			   <input [(ngModel)]="password" (keyup.enter)="doLogin()" type="password" id ="passwordInput" name="password" placeholder="Enter password" class="form-control">
+			   <button style="margin-top: 20px; margin-bottom: 10px" type="submit" (click)="doLogin()" class="btn c-btn-md btn-primary">Login</button>
+		  </fieldset>
+		  <a href="#">forget password ?</a> <a href="#" class="float-right">register now !</a>
+	</div>
+</div>

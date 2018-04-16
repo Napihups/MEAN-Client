@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+	Custom colors 
+	------------------
+	Active = #2fa4e7
+*/
+body{
+	background: #fff;
+}
+
+.c-btn-md {
+	padding: 8px;
+
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.search-link:hover{
+	background: #2196f3;
+	color:white;
+	cursor: pointer;
+}
+
+
+
+
+.linkHover{
+	cursor: pointer;
+}

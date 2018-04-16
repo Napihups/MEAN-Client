@@ -1,0 +1,30 @@
+<div class="card">
+		<div class="card-header p-2">
+			{{uos_state.title}} 
+		</div>
+		<div class="card-body" style="height: 500px; overflow-y: scroll;">
+			<ul *ngIf="isAnyoneOnline()" class="online-list" >
+
+				<div *ngFor="let user of onlineListing">
+	                <li (click)="createModal(user)" data-toggle="modal" data-target="#inviteGameModal">
+						<p class="lead">{{user.username}}</p>
+
+						<span class="badge badge-light  p-2 ml-1 mb-2">
+						<i class="far fa-play-circle"></i> Play</span>
+
+	                </li>
+
+	            </div>
+               
+			</ul>
+
+			<div *ngIf="!isAnyoneOnline()" class="card-body no-online-user-noti">
+				No active users !
+			</div>
+
+		</div>
+</div>
+
+
+
+
